@@ -1,0 +1,96 @@
+body {
+	background-color: #84C0C6;
+	background-image: url(./wallpaper.jpg);
+}
+
+#container {
+	border: 5px solid #46B1C9;
+	background-color: #9FB7B9;
+}
+
+.bgheader {
+	background-color: #46B1C9;
+}
+
+.textColor{
+	color: white !important;
+}
+
+#mainnavigation {
+	background-color: #9FB7B9;	
+}
+
+.active{
+	color: black;
+}
+.iconSize{
+	size: 32px;
+}
+#all{
+	margin-top: 50px;
+}
+#cabecera {
+	text-align: center;
+}
+
+#themeColor1{
+	color: #EE6055;
+}
+
+#themeColor2{
+	font-size: 15px;
+	color: #6d6d6d;
+}
+
+#maincontent {
+	
+	background-color: #84C0C6;
+	
+}
+
+#news {
+	background-color: #84C0C6;
+	
+}
+
+footer {
+	background-color: #46B1C9;
+}
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+/* container width: 750px */
+@media (min-width: 768px) { 
+body {
+		background-color: #BCC1BA;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+/* container width: 970 */
+@media (min-width: 992px) {
+body {
+		background-color: #BCC1BA;
+	}
+}
+	
+
+
+/* Large devices (large desktops, 1200px and up) */
+/* container width: 1170px */
+@media (min-width: 1200px) {
+body {
+		background-color: #BCC1BA;
+	}
+
+}
+
+
+
+
+
+

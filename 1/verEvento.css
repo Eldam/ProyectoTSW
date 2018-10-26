@@ -1,0 +1,117 @@
+body {
+	background-color: #84C0C6;
+}
+
+#container {
+	border: 5px solid #46B1C9;
+	background-color: #9FB7B9;
+}
+
+.bgheader {
+	background-color: #46B1C9;
+}
+
+.textColor{
+	color: white !important;
+}
+
+#mainnavigation {
+	background-color: #9FB7B9;	
+}
+
+.active{
+	color: black;
+}
+.iconSize{
+	size: 32px;
+}
+#all{
+	margin-top: 50px;
+}
+#cabecera {
+	text-align: center;
+}
+
+#maincontent {
+	margin-top: 100px;
+	background-color: #84C0C6;
+	margin-bottom: 100px;
+	
+}
+
+#news {
+	background-color: #84C0C6;
+	
+}
+
+footer {
+	background-color: #46B1C9;
+	
+}
+
+.headPosition{
+    text-align: center;
+}
+
+.fa-check-square {
+    font-size: 50px !important;
+    color: rgb(153, 209, 68);
+}
+.fa-times {
+    font-size: 50px !important;
+    color: rgb(201, 37, 37);
+}
+.fa-question-circle{
+    font-size: 50px !important;
+    color: rgb(212, 151, 18);
+}
+td{
+    text-align: center !important;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+/* container width: 750px */
+@media (min-width: 768px) { 
+body {
+		background-color: #BCC1BA;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+/* container width: 970 */
+@media (min-width: 992px) {
+body {
+		background-color: #BCC1BA;
+	}
+}
+	
+
+
+/* Large devices (large desktops, 1200px and up) */
+/* container width: 1170px */
+@media (min-width: 1200px) {
+body {
+		background-color: #BCC1BA;
+	}
+
+}
+
+
+
+
+
+
+/*
+colores de mas oscuro a mas claro
+
+color:#46B1C9
+color:#84C0C6
+color:#9FB7B9
+color:#BCC1BA
+color:#F2E2D2
+
+
+*/
