@@ -57,8 +57,8 @@
 					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 					<?php echo $lang["ln"] ?> <span class="caret"></span></button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#"><?php echo $lang["es"] ?></a></li>
-						<li><a href="#"><?php echo $lang["en"] ?></a></li>
+						<li><a href="./cambiar_idoma.php?lang=es"><?php echo $lang["es"] ?></a></li>
+						<li><a href="./cambiar_idoma.php?lang=en"><?php echo $lang["en"] ?></a></li>
 					</ul>
 				</div>
 				<li><a class="textColor active" href="../Functions/Desconectar.php"><span class="glyphicon glyphicon-log-out"></span> <?php echo $lang["LogOut"] ?></a></li>

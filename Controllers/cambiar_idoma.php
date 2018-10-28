@@ -13,8 +13,8 @@ else{
             $_SESSION['lang'] = $_REQUEST['lang'];
             
         }
-        if (isset($_REQUEST['return'])) {
-            header('Location: '.$_REQUEST['return']);
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            header('Location: '.$_SERVER['HTTP_REFERER']);
             
         }
         

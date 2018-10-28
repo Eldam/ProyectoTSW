@@ -24,15 +24,17 @@ $("#createHollow").on( "click", function(){
 });
 
 function getAllHollows(){
-    var data= [];
+    var i=0;
+    var data= {};
     $("table tbody").find('.hollow').each(function(){
-        var hollow = [];
-        hollow["fecha"] = $(this).children(".fecha").html();
-        hollow["hIni"] = $(this).children(".hIni").html();
-        hollow["hFin"] = $(this).children(".hFin").html();
+        var hollow = {
+        fecha : $(this).children(".fecha").html(),
+        hIni : $(this).children(".hIni").html(),
+        hFin : $(this).children(".hFin").html()
+        }
 
-        data.push(hollow);
-
+        data[i]=(hollow);
+        i++;
     });
 
     return data;
@@ -68,7 +70,12 @@ $("#rmhollow").on( "click", function(){
 
 
 $("#saveEvent").on( "click", function(){
-    $.post( "./guardarEvento.php", { nombre: $("#name"), data : getAllHollows().serialize() } );
+    var data = getAllHollows();
+    var json = {
+        nombre: $("#name").val(),
+        data : data
+    }
+    $.post( "guardar_evento.php", JSON.stringify(json));
 });
 
 
