@@ -7,7 +7,8 @@
 
 function ConnectDB()
 {
-    $mysqli = new mysqli("localhost","admin","admin","TSWDB");
+	$array_ini = parse_ini_file("../config.ini");
+    $mysqli = new mysqli($array_ini["DB_URL"],$array_ini["DB_USER"],$array_ini["DB_PATH"],$array_ini["DB_NAME"]);
     	
 	if ($mysqli->connect_errno) {
 		include '../Views/MESSAGE_View.php';
