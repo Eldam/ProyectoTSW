@@ -31,7 +31,6 @@
 
 	
 	<link rel="stylesheet" href="../Locales/style.css">
-	 
 
 		
 </head>
@@ -45,7 +44,7 @@
 		<nav class="row navbar bgheader ">
 			<div class="container">
 				<div class="navbar-header">
-				<a class="textColor navbar-brand" href="../Controllers/index_controller.php">Assembled</a>
+				<a class="textColor navbar-brand" href="../Controllers/index_controller.php"><img class="logo" src="../Locales/logo.png" alt="Logo"></a>
 				</div>
 				<ul class="nav navbar-nav">
 				<li><a class="textColor active" href="../Controllers/index_controller.php"><?php echo $lang["start"] ?></a></li>
@@ -55,10 +54,10 @@
 				<ul class="nav navbar-nav navbar-right">
 				<div class="btn-group">
 					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-					<?php echo $lang["ln"] ?> <span class="caret"></span></button>
+					<img class="flag" src="../Locales/European.png" alt="European-Flag"><?php echo $lang["ln"] ?> <span class="caret"></span></button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="./cambiar_idoma.php?lang=es"><?php echo $lang["es"] ?></a></li>
-						<li><a href="./cambiar_idoma.php?lang=en"><?php echo $lang["en"] ?></a></li>
+						<li><a href="./cambiar_idoma.php?lang=es"><img class="flag" src="../Locales/spanish.png" alt="spanish"><?php echo $lang["es"] ?></a></li>
+						<li><a href="./cambiar_idoma.php?lang=en"><img class="flag" src="../Locales/english.png" alt="english"><?php echo $lang["en"] ?></a></li>
 					</ul>
 				</div>
 				<li><a class="textColor active" href="../Functions/Desconectar.php"><span class="glyphicon glyphicon-log-out"></span> <?php echo $lang["LogOut"] ?></a></li>

@@ -5,6 +5,7 @@ $lang = array(
     "msgs"  => "Mensajes",
 	"seeEvents" => "Ver Eventos",
     "checkIn" => "Registrarse",
+    "create" => "Crear Evento",
     "signIn" => "Iniciar",
     "signUp" => "Registrarse",
     "register" => "Registrate",
@@ -22,6 +23,8 @@ $lang = array(
     "editEvent" => "Editar Evento",
     "seeEvents" => "Ver Eventos",
     "msgEventLink" => "El link del evento es:",
+    "foot" => "Assembled es una app hecha para TSW",
+    "link" => "Enlaces",
     "eventName" => "Nombre del Evento"
 );  
 

@@ -3,6 +3,16 @@ body {
 	background-image: url(./wallpaper.jpg);
 }
 
+a img, button img {
+	width: 30px; 
+	height: auto; 
+}
+
+.logo{
+	width: 200px;
+	height: auto;
+}
+
 #container {
 	border: 5px solid #46B1C9;
 	background-color: #9FB7B9;
@@ -14,6 +24,12 @@ body {
 
 .textColor{
 	color: white !important;
+	border-radius: 15px;
+}
+.textColor:hover{
+	color: black !important;
+	border-radius: 15px;
+	transition-duration: 3s;
 }
 
 #mainnavigation {
@@ -56,6 +72,8 @@ body {
 footer {
 	background-color: #46B1C9;
 }
+
+
 
 
 

@@ -5,6 +5,7 @@ $lang = array(
     "msgs"  => "Messages",
 	"seeEvents" => "See Events",
     "checkIn" => "Check in",
+    "create" => "Create Event",
     "signIn" => "Sign In",
     "signUp" => "Sign Up",
     "email" => "Email",
@@ -20,5 +21,7 @@ $lang = array(
     "editEvent" => "Edit Event",
     "seeEvent" => "See Events",
     "msgEventLink" => "The link of the event is:",
+    "foot" => "Assembled is app for tsw class.",
+    "link" => "Link",
     "eventName" => "Name of the Event"
 );

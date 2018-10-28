@@ -7,7 +7,7 @@
 
                             <!-- Content -->
                             <h5 class="text-uppercase">ASSEMBLED</h5>
-                            <p>Assembled is app for tsw class.</p>
+                            <p><?php echo $lang["foot"] ?></p>
                     
                     </div>
 
@@ -16,7 +16,7 @@
                     <div class="col-md-3 mb-md-0 mb-3">
 
                         <!-- Links -->
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase"><?php echo $lang["link"]?></h5>
 
                         <ul class="list-unstyled">
                             <li>
@@ -30,7 +30,7 @@
 
                     <div class="col-md-3 mb-md-0 mb-3">
 
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase"><?php echo $lang["link"]?></h5>
 
                         <ul class="list-unstyled">
                             <li>
@@ -47,7 +47,7 @@
 
 
                 <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                    <a href="#">Manuel Barciela Martín</a>
+                    <a href="#">Manuel Barciela Martín.</a>
                 </div>
                 
             </footer>
