@@ -33,24 +33,16 @@ else{
         } else {
 
             include_once '../Models/User_Model.php';
-            $login = $_REQUEST['login'];
+            $email = $_REQUEST['email'];
             $password = $_REQUEST['password'];
-            $DNI = $_REQUEST['DNI'];
-            $Nombre = $_REQUEST['Nombre'];
-            $Apellidos = $_REQUEST['Apellidos'];
-            $Telefono = $_REQUEST['Telefono'];
-            $Correo = $_REQUEST['Correo'];
-            $Direccion = $_REQUEST['Direccion'];
+            $nombre = $_REQUEST['nombre'];
 
             //Se crea un DAO y le pasan todos los parametros
-            $usuario = new UserDAO($login, $password);
-            $usuario->setData($DNI, $Nombre, $Apellidos, $Telefono, $Correo, $Direccion);
+            $usuario = new UserDAO($email, $password);
+            $usuario->setNombre($nombre);
 
             //Se añade el usuario
             $respuesta = $usuario->ADD();
-
-            //Se le asigna por defceto al grupo ALUMNOS
-            $usuario->assingGroup("ALUMNS");
 
             //Si la respuesta es "true" se muestra mensage de Confirmacion
             // de lo contrario el error correspondiente

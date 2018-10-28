@@ -19,20 +19,16 @@ GRANT ALL PRIVILEGES ON `TSWDB`.* TO `admin`@`localhost` WITH GRANT OPTION;
 
 
 CREATE TABLE `USUARIO` (
-  `login` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
-  `password` varchar(128) COLLATE latin1_spanish_ci NOT NULL,
-  `DNI` varchar(9) COLLATE latin1_spanish_ci NOT NULL,
-  `Nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
-  `Apellidos` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `Correo` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
-  `Direccion` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
-  `Telefono` varchar(11) COLLATE latin1_spanish_ci NOT NULL
+  `email` varchar(50) COLLATE latin1_spanish_ci NOT NULL UNIQUE,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `password` varchar(128) COLLATE latin1_spanish_ci NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 
   CREATE TABLE `EVENTO` (
-  `uuid` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
-  `nombre` varchar(128) COLLATE latin1_spanish_ci NOT NULL
+  `uuid` varchar(30) COLLATE latin1_spanish_ci NOT NULL UNIQUE,
+  `nombre` varchar(128) COLLATE latin1_spanish_ci NOT NULL,
+  `emailUser` varchar(50) COLLATE latin1_spanish_ci NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 

@@ -14,7 +14,7 @@ class MESSAGE{
 	function render(){
 
 	/*	include './Strings_'.$_SESSION['idioma'].'.php';*/
-		include '../Locales/Header.html';
+		include '../Locales/header.php';
 ?>
 		<br>
 		<br>
@@ -30,12 +30,12 @@ class MESSAGE{
                 <br>
                 <br>
                 <br>
-                <a href="<?php echo $this->volver ?>"><i class="fa fa-arrow-circle-left" id="returnIcon"></i></a>
+                <a href="<?php echo $this->volver ?>"><i class="fa fa-arrow-circle-left fa-5" id="returnIcon"></i></a>
             </div>
         </div>
 <?php
 
-		include '../Locales/Footer.html';
+		include '../Locales/footer.php';
 	} //fin metodo render
 
 }
