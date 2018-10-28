@@ -25,8 +25,45 @@ class EventoDAO
 
 
     function generate(){
-        return uniqid(true);
+        $this->uuid = uniqid(true);
+
+        $sql = "INSERT INTO EVENTO (uuid, nombre) VALUES ('". $this->uuid."', '".$this->nombre ."')";
+
+        mysqli_query($this->mysqli,$sql);
+
+        return $this->uuid;
     }
+
+
+
+    function GET()
+    {
+        $sql = "select * from EVENTO where uuid = '".$this->uuid."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
+
+
+
+    function EDIT()
+    {
+        $sql = "select * from EVENTO where uuid = '".$this->uuid."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+
+        if (mysqli_num_rows($resultado) == 1) {
+            $sql = "UPDATE EVENTO SET 
+            		nombre = '" . $this->nombre .
+                "'  where uuid = '".$this->uuid."'";
+            mysqli_query($this->mysqli, $sql);
+            return "Actualizado";
+
+        } else {
+            return "El evento no existe";
+        }
+    }
+
 
 }
 ?>

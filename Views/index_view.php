@@ -8,9 +8,9 @@ class Index {
 
     function render(){
 
-        include '../Locales/header.html';
+        include '../Locales/header.php';
         include '../Locales/home.html';
-        include '../Locales/footer.html';
+        include '../Locales/footer.php';
     }
 
 }

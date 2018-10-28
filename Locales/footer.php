@@ -54,4 +54,5 @@
 
         </div>
     </body>
+    <script src="../Locales/script.js"></script> 
 </html>

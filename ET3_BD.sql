@@ -30,4 +30,11 @@ CREATE TABLE `USUARIO` (
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 
+  CREATE TABLE `EVENTO` (
+  `uuid` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre` varchar(128) COLLATE latin1_spanish_ci NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+
+
 

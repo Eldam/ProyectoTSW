@@ -1,3 +1,13 @@
+<?php
+    if(isset($_SESSION['lang'])){
+        // si es true, se crea el require y la variable lang
+        $lang = $_SESSION["lang"];
+        require "../Lang/".$lang.".php";
+        // si no hay sesion por default se carga el lenguaje espanol
+    }else{
+        require "../Lang/es.php";
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +31,7 @@
 
 	
 	<link rel="stylesheet" href="../Locales/style.css">
+	 
 
 		
 </head>
@@ -37,13 +48,13 @@
 				<a class="textColor navbar-brand" href="#">Assembled</a>
 				</div>
 				<ul class="nav navbar-nav">
-				<li><a class="textColor active" href="#">Inicio</a></li>
-				<li><a class="textColor" href="#">Mensajes</a></li>
-				<li><a class="textColor" href="#">Ver Eventos</a></li>
+				<li><a class="textColor active" href="#"><?php echo $lang["start"] ?></a></li>
+				<li><a class="textColor" href="#"><?php echo $lang["msgs"] ?></a></li>
+				<li><a class="textColor" href="#"><?php echo $lang["seeEvents"] ?></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-				<li><a class="textColor active" href="#"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-				<li><a class="textColor active" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a class="textColor active" href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $lang["checkIn"] ?></a></li>
+				<li><a class="textColor active" href="#"><span class="glyphicon glyphicon-log-in"></span> <?php echo $lang["Login"] ?></a></li>
 				</ul>
 			</div>
 		</nav>
