@@ -21,9 +21,9 @@ function getAllHollows(){
     var data= [];
     $("table tbody").find('.hollow').each(function(){
         var hollow = [];
-        hollow["fecha"] = $(this).children(".fecha").val();
-        hollow["hIni"] = $(this).children(".hIni").val();
-        hollow["hFin"] = $(this).children(".hFin").val();
+        hollow["fecha"] = $(this).children(".fecha").html();
+        hollow["hIni"] = $(this).children(".hIni").html();
+        hollow["hFin"] = $(this).children(".hFin").html();
 
         data.push(hollow);
 

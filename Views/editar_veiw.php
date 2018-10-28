@@ -95,16 +95,16 @@ class EditarView{
                     <tbody>
                         <tr class="hollow">
                             <td class="fecha">21/10/2018</td>
-                            <td class="hIni">08:08</td>
-                            <td class="hFin">08:08</td>
+                            <td class="hIni">16:08</td>
+                            <td class="hFin">17:08</td>
                         </tr>
                         <tr class="hollow">
-                            <td class="fecha">21/10/2018</td>
+                            <td class="fecha">11/05/2019</td>
                             <td class="hIni">08:08</td>
-                            <td class="hFin">08:08</td>
+                            <td class="hFin">09:08</td>
                         </tr>
                         <tr class="hollow">
-                            <td class="fecha">21/10/2018</td>
+                            <td class="fecha">25/07/2019</td>
                             <td class="hIni">08:08</td>
                             <td class="hFin">08:08</td>
                         </tr>

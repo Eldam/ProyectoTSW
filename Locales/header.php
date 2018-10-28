@@ -45,16 +45,15 @@
 		<nav class="row navbar bgheader ">
 			<div class="container">
 				<div class="navbar-header">
-				<a class="textColor navbar-brand" href="#">Assembled</a>
+				<a class="textColor navbar-brand" href="../Controllers/index_controller.php">Assembled</a>
 				</div>
 				<ul class="nav navbar-nav">
-				<li><a class="textColor active" href="#"><?php echo $lang["start"] ?></a></li>
+				<li><a class="textColor active" href="../Controllers/index_controller.php"><?php echo $lang["start"] ?></a></li>
 				<li><a class="textColor" href="#"><?php echo $lang["msgs"] ?></a></li>
-				<li><a class="textColor" href="#"><?php echo $lang["seeEvents"] ?></a></li>
+				<li><a class="textColor" href="../Controllers/crear_evento.php"><?php echo $lang["seeEvents"] ?></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-				<li><a class="textColor active" href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $lang["checkIn"] ?></a></li>
-				<li><a class="textColor active" href="#"><span class="glyphicon glyphicon-log-in"></span> <?php echo $lang["Login"] ?></a></li>
+				<li><a class="textColor active" href="../Functions/Desconectar.php"><span class="glyphicon glyphicon-log-out"></span> <?php echo $lang["LogOut"] ?></a></li>
 				</ul>
 			</div>
 		</nav>

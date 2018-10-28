@@ -6,8 +6,8 @@
                     <div class="col-md-6 mt-md-0 mt-3">
 
                             <!-- Content -->
-                            <h5 class="text-uppercase">Footer Content</h5>
-                            <p>Assembled app for tsw class.</p>
+                            <h5 class="text-uppercase">ASSEMBLED</h5>
+                            <p>Assembled is app for tsw class.</p>
                     
                     </div>
 
