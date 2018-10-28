@@ -89,7 +89,9 @@ body {
 
 }
 
-
+#msgError{
+	color: red;
+}
 
 
 .fa-5 {

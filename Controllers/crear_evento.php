@@ -14,7 +14,7 @@ else{
     $evento = new EventoDAO();
     $uuid = $evento->generate();
 
-    include_once '../Views/editar_veiw.php';
+    include_once '../Views/editar_view.php';
     new EditarView($uuid,"");
 
 }

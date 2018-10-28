@@ -1,20 +1,26 @@
 $("#createHollow").on( "click", function(){
+    $("#msgError").addClass("hidden");
     var fecha= $("#fecha").val();
     var hIni= $("#hini").val();
     var hFin= $("#hfin").val();
 
 
-    $("table tbody").find('.fecha').each(function(){
+    var data = getAllHollows();
 
-        if($(this).is(":checked")){
+    if(contains(data)){
+        $("#msgError").removeClass("hidden");
+    }else{
+        var row =   '<tr class="hollow">'+
+                        '<td class="fecha">'+ fecha +'</td>' +
+                        '<td class="hIni">'+ hIni +'</td>' +
+                        '<td class="hFin">'+ hFin +'</td>' +
+                    '</tr>'
+        $("table tbody").append(row);
+        $('#myModal').modal('hide');
+    }
 
-            $(this).parents("tr").remove();
 
-        }
-
-    });
-
-    $('#modal').modal('myModal');
+   
 });
 
 function getAllHollows(){
@@ -31,3 +37,38 @@ function getAllHollows(){
 
     return data;
 }
+
+
+
+function contains(data){
+    var fecha= $("#fecha").val();
+    var hIni= $("#hini").val();
+    var hFin= $("#hfin").val();
+    for(index in data){
+        if(data[index]["fecha"] == fecha 
+          && data[index]["hIni"] == hIni 
+          && data[index]["hFin"] == hFin ){
+
+            return true;
+                
+        }
+    }
+
+    return false;
+}
+
+
+
+
+
+$("#rmhollow").on( "click", function(){
+    $("table tbody").empty();
+});
+
+
+
+$("#saveEvent").on( "click", function(){
+    $.post( "./guardarEvento.php", { nombre: $("#name"), data : getAllHollows().serialize() } );
+});
+
+

@@ -27,7 +27,7 @@ class EventoDAO
     function generate(){
         $this->uuid = uniqid(true);
 
-        $sql = "INSERT INTO EVENTO (uuid, nombre) VALUES ('". $this->uuid."', '".$this->nombre ."')";
+        $sql = "INSERT INTO EVENTO (uuid, nombre, emailUser) VALUES ('". $this->uuid."', '".$this->nombre."', '". $_SESSION["email"] ."')";
 
         mysqli_query($this->mysqli,$sql);
 

@@ -43,10 +43,12 @@ class EditarView{
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Crear Evento</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Crear Evento</h4>
                 </div>
                 <div class="modal-body">
+                    <h4 id="msgError" class="modal-title hidden">La fecha introducida ya existe</h4>
+                    <br>
                     <div class="form-group">
                         <label>Fecha:</label>
                         <input id="fecha" type="date" class="form-control">
@@ -93,29 +95,17 @@ class EditarView{
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="hollow">
-                            <td class="fecha">21/10/2018</td>
-                            <td class="hIni">16:08</td>
-                            <td class="hFin">17:08</td>
-                        </tr>
-                        <tr class="hollow">
-                            <td class="fecha">11/05/2019</td>
-                            <td class="hIni">08:08</td>
-                            <td class="hFin">09:08</td>
-                        </tr>
-                        <tr class="hollow">
-                            <td class="fecha">25/07/2019</td>
-                            <td class="hIni">08:08</td>
-                            <td class="hFin">08:08</td>
-                        </tr>
                     </tbody>
                     </table>
     </form>
     
     <button type="button" id="addhollow" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><span class="iconSize glyphicon glyphicon-plus-sign"></span> Añadir hueco</button>
+    <button type="button" id="rmhollow" class="btn btn-info btn-lg"><span class="iconSize glyphicon glyphicon-minus-sign"></span>Limpiar tabla</button>
+    <br>
+    <br>
 
-    
-
+    <button type="button" id="saveEvent" class="btn btn-info btn-lg"><span class="iconSize fas fa-save"></span>Guardar</button>
+    <br>
 <?php
 
 		 include '../Locales/footer.php';
