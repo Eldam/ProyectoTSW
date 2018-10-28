@@ -15,7 +15,7 @@ else{
     $uuid = $evento->generate();
 
     include_once '../Views/editar_veiw.php';
-    new EditarView($uuid);
+    new EditarView($uuid,"");
 
 }
 
