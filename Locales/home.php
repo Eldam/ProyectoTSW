@@ -36,7 +36,11 @@
 			
 			<article id="maincontent" class="col-md-6 col-lg-6">
 
-				<h2>Examples</h2>
+				<h2>
+					<?php
+						echo $lang["seeEvents"];
+					?>
+				</h2>
 
 				<table class="table table-condensed">
 						<thead>

@@ -9,7 +9,7 @@ class Index {
     function render(){
 
         include '../Locales/header.php';
-        include '../Locales/home.html';
+        include '../Locales/home.php';
         include '../Locales/footer.php';
     }
 
