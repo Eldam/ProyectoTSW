@@ -47,5 +47,10 @@ class EventoFechaDAO
 
         return $resultado;
     }
+
+    function delete($EventoFechaId){
+        $sql = "Delete from EVENTO_FECHA where EventoFechaId = '".$EventoFechaId."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+    }
 }
 ?>

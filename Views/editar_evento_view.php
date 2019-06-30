@@ -67,7 +67,7 @@ class EditarEventoView{
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" id="createHollow" class="btn btn-success">Crear</button>
+                <button type="button" id="editViewAddHollow" class="btn btn-success">Crear</button>
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
@@ -104,8 +104,8 @@ class EditarEventoView{
                                 '<td class="fecha">'.$eventoFecha["fecha"].'</td>'.
                                 '<td class="hIni">'.$eventoFecha["HoraInicio"].'</td>'.
                                 '<td class="hFin">'.$eventoFecha["HoraFin"].'</td>'.
-                                //'<td style="display:none;" class="EventoFechaId">'.$eventoFecha["EventoFechaId"].'</td>'.
-                                '<td class="EventoFechaId">'.$eventoFecha["EventoFechaId"].'</td>'.
+                                "<td> <a href='../Controllers/eliminar_fecha_evento.php?uuid=".
+                                $this->uuid."&EventoFechaId=".$eventoFecha["EventoFechaId"]."'>Eliminar </a></td>".
                             '</tr>';
                             }
                         ?>
@@ -114,11 +114,11 @@ class EditarEventoView{
     </form>
     
     <button type="button" id="addhollow" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><span class="iconSize glyphicon glyphicon-plus-sign"></span> Añadir hueco</button>
-    <button type="button" id="rmhollow" class="btn btn-info btn-lg"><span class="iconSize glyphicon glyphicon-minus-sign"></span>Limpiar tabla</button>
     <br>
     <br>
 
-    <button type="button" id="saveEvent" class="btn btn-info btn-lg"><span class="iconSize fas fa-save"></span>Guardar</button>
+    <a href='../Controllers/Ver_Eventos.php'> Volver </a>
+    <br>
     <br>
 <?php
 

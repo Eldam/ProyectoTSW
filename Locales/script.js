@@ -7,6 +7,7 @@ $("#createHollow").on( "click", function(){
 
     var data = getAllHollows();
 
+    
     if(contains(data)){
         $("#msgError").removeClass("hidden");
     }else{
@@ -19,9 +20,30 @@ $("#createHollow").on( "click", function(){
         $('#myModal').modal('hide');
     }
 
+   
+});
+
+$("#editViewAddHollow").on( "click", function(){
+    $("#msgError").addClass("hidden");
+    var fecha= $("#fecha").val();
+    var hIni= $("#hini").val();
+    var hFin= $("#hfin").val();
+
+
+    var data = getAllHollows();
+
+    
+    if(contains(data)){
+        $("#msgError").removeClass("hidden");
+    }else{
+        window.location.href = 'add_fecha_evento.php?fecha='+ fecha + '&hIni=' + hIni + "&hFin=" + hFin + "&uuid=" + $("#uuid").text();
+    }
 
    
 });
+
+
+
 
 function getAllHollows(){
     var i=0;
