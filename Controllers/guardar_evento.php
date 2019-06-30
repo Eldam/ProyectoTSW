@@ -10,24 +10,23 @@ if (!IsAuthenticated()){
 //esta autenticado
 else{
   
+    // Para añadir a Evento
+    include_once '../Models/Evento_Model.php';
+    $evento = new EventoDAO();
+    // Para añadir a Evento_Fecha
     include_once '../Models/Evento_Fecha.php';
     $eventoFecha = new EventoFechaDAO();
-    // $evento->add();
 
-    $json = json_decode($_POST["data"]);
 
-    //print_r(array_keys($json));
-    
-    echo "Nombre: " . $_POST["nombre"] . "\n";
-    echo "Uuid: " . $_POST["uuid"];
-    echo "data: ";
-    //print_r(array_keys($_POST["data"]));
+    //no postea el nombre :S
+    $evento->update($_POST["uuid"],$_POST["nombre"]);
+
     foreach ($_POST["data"] as $clave=>$value){
-        $eventoFecha->add($_POST["uuid"],$value["fecha"],$value["hIni"],$value["hFin"]);
-        
+        $eventoFecha->add($_POST["uuid"],$value["fecha"],$value["hIni"],$value["hFin"]);    
     }
 
-
+    $message = "Se ha guardado el evento!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
 }
 
 ?>

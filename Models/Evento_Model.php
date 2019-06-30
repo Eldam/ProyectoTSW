@@ -22,6 +22,12 @@ class EventoDAO
         $this->nombre = $nombre;
     }
 
+    function update($uuid,$nombre)
+    {
+        $sql = "UPDATE EVENTO set nombre='".$nombre."' WHERE uuid='".$uuid."'";
+        mysqli_query($this->mysqli,$sql);
+    }
+
 
 
     function generate(){
@@ -39,6 +45,14 @@ class EventoDAO
     function GET()
     {
         $sql = "select * from EVENTO where uuid = '".$this->uuid."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
+
+    function GETALL($emailUser)
+    {
+        $sql = "select * from EVENTO where emailUser = '".$this->emailUser."'";
         $resultado = mysqli_query($this->mysqli,$sql);
 
         return $resultado;

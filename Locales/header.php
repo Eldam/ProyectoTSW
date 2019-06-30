@@ -49,7 +49,7 @@
 				<ul class="nav navbar-nav">
 				<li><a class="textColor active" href="../Controllers/index_controller.php"><?php echo $lang["start"] ?></a></li>
 				<li><a class="textColor" href="#"><?php echo $lang["msgs"] ?></a></li>
-				<li><a class="textColor" href="../Controllers/crear_evento.php"><?php echo $lang["seeEvents"] ?></a></li>
+				<li><a class="textColor" href="../Controllers/Ver_Eventos.php"><?php echo $lang["seeEvents"] ?></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				<div class="btn-group">
