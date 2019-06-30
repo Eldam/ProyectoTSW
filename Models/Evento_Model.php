@@ -42,9 +42,9 @@ class EventoDAO
 
 
 
-    function GET()
+    function GET($uuid)
     {
-        $sql = "select * from EVENTO where uuid = '".$this->uuid."'";
+        $sql = "select * from EVENTO where uuid = '".$uuid."'";
         $resultado = mysqli_query($this->mysqli,$sql);
 
         return $resultado;

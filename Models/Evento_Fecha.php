@@ -17,5 +17,13 @@ class EventoFechaDAO
         $sql = "INSERT INTO EVENTO_FECHA (uuid, Fecha, HoraInicio, HoraFin) VALUES ('". $uuid."','". $Fecha."','". $HoraInicio."','". $HoraFin ."')";
         mysqli_query($this->mysqli,$sql);
     }
+
+    function GETALL($uuid)
+    {
+        $sql = "select * from EVENTO_FECHA where uuid = '".$uuid."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
 }
 ?>
