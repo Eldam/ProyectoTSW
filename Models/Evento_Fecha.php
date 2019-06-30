@@ -17,5 +17,19 @@ class EventoFechaDAO
         $sql = "INSERT INTO EVENTO_FECHA (uuid, Fecha, HoraInicio, HoraFin) VALUES ('". $uuid."','". $Fecha."','". $HoraInicio."','". $HoraFin ."')";
         mysqli_query($this->mysqli,$sql);
     }
+
+    function checkIn($email,$uuid,$nombre)
+    {
+        $sql = "INSERT INTO ANOTADOS (emailUser, uuid,nombre) VALUES ('". $email."','". $uuid."','". $nombre."')";
+        mysqli_query($this->mysqli,$sql);
+    }
+
+    function GETALL($emailUser)
+    {
+        $sql = "SELECT * from ANOTADOS WHERE emailUser ='".$emailUser."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
 }
 ?>

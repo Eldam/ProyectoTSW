@@ -24,9 +24,7 @@ else{
     foreach ($_POST["data"] as $clave=>$value){
         $eventoFecha->add($_POST["uuid"],$value["fecha"],$value["hIni"],$value["hFin"]);    
     }
-
-    $message = "Se ha guardado el evento!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+    $eventoFecha->checkIn($_SESSION["email"],$_POST["uuid"],$_POST["nombre"]);
 }
 
 ?>

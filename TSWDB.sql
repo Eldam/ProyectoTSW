@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-06-2019 a las 04:18:04
+-- Tiempo de generación: 30-06-2019 a las 22:23:58
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.1.30
 
@@ -21,7 +21,12 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `TSWDB`
 --
-
+DROP DATABASE IF EXISTS `TSWDB`;
+CREATE DATABASE `TSWDB` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+--
+-- SELECCIONAMOS PARA USAR
+--
+USE `TSWDB`;
 -- --------------------------------------------------------
 
 --
@@ -29,9 +34,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ANOTADOS` (
-  `EVENTO_FECHA_ID` int(30) NOT NULL,
-  `EMAIL` varchar(50) NOT NULL,
-  `ELECCION` char(1) NOT NULL
+  `emailUser` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `uuid` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre` varchar(128) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ELECCIONES`
+--
+
+CREATE TABLE `ELECCIONES` (
+  `EventoFechaId` int(30) NOT NULL,
+  `emailUser` varchar(50) NOT NULL,
+  `Eleccion` char(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -46,38 +63,6 @@ CREATE TABLE `EVENTO` (
   `emailUser` varchar(50) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
---
--- Volcado de datos para la tabla `EVENTO`
---
-
-INSERT INTO `EVENTO` (`uuid`, `nombre`, `emailUser`) VALUES
-('15bd56afedfad2', 'evento 1', 'admin@admin.com'),
-('15d17e8e9b0872', '', 'admin@admin.com'),
-('15d17e9cd3ceb7', '', 'admin@admin.com'),
-('15d17ea207a062', '', 'admin@admin.com'),
-('15d17ea265a827', '', 'admin@admin.com'),
-('15d17ea2c6bee5', '', 'admin@admin.com'),
-('15d17fb1642a15', '', 'admin@admin.com'),
-('15d1801a58a4c9', '', 'admin@admin.com'),
-('15d180261bcc13', '', 'admin@admin.com'),
-('15d18028ddfce2', '', 'admin@admin.com'),
-('15d1802903b7ad', '', 'admin@admin.com'),
-('15d18034c80425', '', 'admin@admin.com'),
-('15d1803a33a4bf', '', 'admin@admin.com'),
-('15d1804214630a', '', 'admin@admin.com'),
-('15d1804642fb6f', '', 'admin@admin.com'),
-('15d1804b656663', '', 'admin@admin.com'),
-('15d1804dc319c1', '', 'admin@admin.com'),
-('15d18053562500', '', 'admin@admin.com'),
-('15d18054933be6', '', 'admin@admin.com'),
-('15d180571352e4', '', 'admin@admin.com'),
-('15d1806450b81f', '', 'admin@admin.com'),
-('15d1809f5e1e72', '', 'admin@admin.com'),
-('15d181038cab33', '', 'admin@admin.com'),
-('15d1812b2c56ae', '', 'admin@admin.com'),
-('15d1813713d50e', '', 'admin@admin.com'),
-('15d1814a34d9f8', '', 'admin@admin.com');
-
 -- --------------------------------------------------------
 
 --
@@ -91,15 +76,6 @@ CREATE TABLE `EVENTO_FECHA` (
   `HoraInicio` time NOT NULL,
   `HoraFin` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `EVENTO_FECHA`
---
-
-INSERT INTO `EVENTO_FECHA` (`EventoFechaId`, `uuid`, `fecha`, `HoraInicio`, `HoraFin`) VALUES
-(1, '15d1814a34d9f8', '2019-07-02', '06:59:00', '09:00:00'),
-(2, '15d1814a34d9f8', '2019-07-05', '09:59:00', '13:00:00'),
-(3, '15d1814a34d9f8', '2019-07-11', '10:59:00', '20:00:00');
 
 -- --------------------------------------------------------
 
@@ -151,7 +127,7 @@ ALTER TABLE `USUARIO`
 -- AUTO_INCREMENT de la tabla `EVENTO_FECHA`
 --
 ALTER TABLE `EVENTO_FECHA`
-  MODIFY `EventoFechaId` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `EventoFechaId` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
