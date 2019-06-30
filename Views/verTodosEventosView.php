@@ -48,6 +48,7 @@ class verTodosEventosView{
 								<th>Usuario</th>
 								<th>Uuid</th>
                                 <th>Evento</th>
+                                <th>Accion</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -59,11 +60,15 @@ class verTodosEventosView{
                                     $aux = FALSE;
                                 }else{
                                     echo '<tr class="Success">';
+                                    $aux = TRUE;
                                 }
 
                                 echo"<td>".$event['emailUser']."</td>".
                                     "<td>".$event['uuid']."</td>".
                                     "<td>".$event['nombre']."</td>".
+                                    "<td> <a href='../Controllers/editar_fechas_evento.php?uuid=".
+                                    $event["uuid"].
+                                    "'>Ver/Editar </a></td>".
                                     "</tr>";
                             }
                         ?>
@@ -74,9 +79,8 @@ class verTodosEventosView{
 		</div>	
 
         <?php
-        include '../Locales/Footer.php';
-    }
+
+        include '../Locales/footer.php';
+    }   
+
 }
-
-
-?>
