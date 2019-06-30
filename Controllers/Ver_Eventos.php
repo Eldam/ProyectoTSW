@@ -12,7 +12,7 @@ else{
   
     include_once '../Models/Evento_Fecha.php';
     $event = new EventoFechaDAO();
-    $response = $event->GETALL($_SESSION['email']);
+    $response = $event->GETCHECKED($_SESSION['email']);
 
     include_once '../Views/verTodosEventosView.php';
     new verTodosEventosView($response);

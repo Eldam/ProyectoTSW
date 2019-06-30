@@ -24,9 +24,17 @@ class EventoFechaDAO
         mysqli_query($this->mysqli,$sql);
     }
 
-    function GETALL($emailUser)
+    function GETCHECKED($emailUser)
     {
         $sql = "SELECT * from ANOTADOS WHERE emailUser ='".$emailUser."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
+    
+    function GETALL($uuid)
+    {
+        $sql = "select * from EVENTO_FECHA where uuid = '".$uuid."'";
         $resultado = mysqli_query($this->mysqli,$sql);
 
         return $resultado;
