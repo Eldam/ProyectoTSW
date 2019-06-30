@@ -1,11 +1,6 @@
 
 <?php
 
-//Clase : USUARIOS_Modelo
-//Creado el : 22-09-2017
-//Creado por: jrodeiro
-//-------------------------------------------------------
-
 class UserDAO
 {
 
@@ -81,13 +76,8 @@ class UserDAO
         /* $sql = "select * from USUARIO WHERE login LIKE '%$this->login%'";*/
         $sql = "select * from USUARIO 
             where   
-                (login LIKE '%$this->login%') &&
-                (DNI LIKE '%$this->DNI%') &&
                 (Nombre LIKE '%$this->Nombre%') &&
-                (Apellidos LIKE '%$this->Apellidos%') &&
-                (Correo LIKE '%$this->Correo%') &&
-                (Direccion LIKE '%$this->Direccion%') &&
-                (Telefono LIKE '%$this->Telefono%')
+                (Correo LIKE '%$this->Correo%')
                 ";
         $resultado = mysqli_query($this->mysqli,$sql);
         return $resultado;

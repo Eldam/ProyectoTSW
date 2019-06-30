@@ -73,9 +73,17 @@ $("#saveEvent").on( "click", function(){
     var data = getAllHollows();
     var json = {
         nombre: $("#name").val(),
+        uuid: $("#uuid").text(),
         data : data
     }
-    $.post( "guardar_evento.php", JSON.stringify(json));
+    var aux = JSON.stringify(json);
+    //$.post( "guardar_evento.php", aux);
+    $.ajax({
+        type: 'POST',
+        url: 'guardar_evento.php', 
+        data: json
+    })
+   // $.post( "guardar_evento.php", function( save ) {
+    //    $( ".result" ).html( save );
+   //   });
 });
-
-

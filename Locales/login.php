@@ -56,10 +56,6 @@
                             <input id="name" name="name" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="lastName" class="label"><?php echo $lang["lastName"] ?></label>
-                            <input id="Apellidos" name="Apellidos" type="text" class="input">
-                        </div>
-                        <div class="group">
                             <input id="send" type="submit" class="button" value="<?php echo $lang["signUp"] ?>">
                         </div>
                         <div class="foot-lnk">

@@ -75,7 +75,7 @@ class EditarView{
 
 
     <?php echo $lang["msgEventLink"] ?> <a href="<?php echo self::LINK . $this->uuid; ?>"><?php echo $this->basePath . self::LINK . $this->uuid; ?></a>
-
+    <div id="uuid" hidden><?php echo $this->uuid;?></div>
 
 
 
