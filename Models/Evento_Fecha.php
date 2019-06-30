@@ -31,6 +31,14 @@ class EventoFechaDAO
 
         return $resultado;
     }
+
+    function GETCHECKEDALL($uuid)
+    {
+        $sql = "SELECT * from ANOTADOS WHERE uuid ='".$uuid."'";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
     
     function GETALL($uuid)
     {

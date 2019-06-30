@@ -48,7 +48,7 @@ class verTodosEventosView{
 								<th>Usuario</th>
 								<th>Uuid</th>
                                 <th>Evento</th>
-                                <th>Accion</th>
+                                <th> </th>
 							</tr>
 						</thead>
 						<tbody>
