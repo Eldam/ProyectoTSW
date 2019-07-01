@@ -48,6 +48,13 @@ class EventoFechaDAO
         return $resultado;
     }
 
+    function GETCHOICE($emailUser){
+        $sql = "select * from ELECCIONES";
+        $resultado = mysqli_query($this->mysqli,$sql);
+
+        return $resultado;
+    }
+
     function delete($EventoFechaId){
         $sql = "Delete from EVENTO_FECHA where EventoFechaId = '".$EventoFechaId."'";
         $resultado = mysqli_query($this->mysqli,$sql);

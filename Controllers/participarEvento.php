@@ -14,9 +14,19 @@ else{
     $event = new EventoFechaDAO();
     $response = $event->GETALL($_REQUEST['uuid']);
     $checked = $event->GETCHECKEDALL($_REQUEST['uuid']);
+    $choices = $event->GETCHOICE($_SESSION["email"]);
+
+    $list = array();
+
+    foreach($response as $fecha){
+        $list[$fecha["EventoFechaId"]] = array();
+    }
+    foreach($choices as $choice){
+        $list[$choice["EventoFechaId"]][$choice["emailUser"]]= $choice["Eleccion"];
+    }
 
     include_once '../Views/participarEventosView.php';
-    new participarEventosView($response,$checked);
+    new participarEventosView($response,$checked,$list);
 
 }
 

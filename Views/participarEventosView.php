@@ -4,10 +4,12 @@ class participarEventosView{
 
     var $eventos;
     var $checked;
+    var $list;
 
-    function __construct($response,$checked){
+    function __construct($response,$checked,$list){
         $this->eventos= $response;
         $this->checked= $checked;
+        $this->list= $list;
 		$this->render();
 	}
 
@@ -36,56 +38,53 @@ class participarEventosView{
                 <tr>
                     <th></th>
                     <?php
-                    while ($event = mysqli_fetch_array($this->eventos)){
-                        echo '<th class="headPosition">Dia '. $event["Fecha"]. "<p>Hora Inicio: ". $event["HoraInicio"]. " - ". $event["HoraFin"]. "</p></th>";
+                    foreach($this->eventos as $event){
+                        echo '<th class="headPosition">Dia '. $event["fecha"]. "<p>Hora Inicio: ". $event["HoraInicio"]. " - ". $event["HoraFin"]. "</p></th>";
                     }
                     ?>
                 </tr>
             </thead>
             <tbody>
-                <tr>
                     <?php
-                    while ($event = mysqli_fetch_array($this->eventos)){
-
-                        echo "<td>". $event["emailUser"]. "</td>";
-
-                        if($event["Eleccion"] == NULL){
-                            echo "<td></td>";
-                        }else{
-                            if($event["Eleccion"] == 0){
-                                echo '<td><i class="fa fa-question-circle" aria-hidden="true"></i></td>';
-                            }else{
-                                if($event["Eleccion"] == 1){
-                                    echo '<td><i class="fa fa-check-square" aria-hidden="true"></i></td>';
-                                }else{
-                                    echo '<td><i class="fa fa-times" aria-hidden="true"></i></td>';
+                    foreach($this->checked as $check){
+                        echo "<tr>";
+                        echo "<td>". $check["emailUser"]. "</td>";
+                        foreach($this->eventos as $event){
+                            echo "<td>";
+                            if(array_key_exists($event["EventoFechaId"],$this->list)){
+                                $aux = $this->list[$event["EventoFechaId"]];//[$check["emailUser"]];
+                                if(array_key_exists($check["emailUser"],$aux)){
+                                    if($aux[$check["emailUser"]] == 0){
+                                        echo '<i class="fa fa-question-circle" aria-hidden="true"></i>';
+                                    }else{
+                                        if($aux[$check["emailUser"]] == 1){
+                                            echo '<i class="fa fa-check-square" aria-hidden="true"></i>';
+                                        }else{
+                                            echo '<i class="fa fa-times" aria-hidden="true"></i>';
+                                        }
+                                    }
                                 }
                             }
+                            echo "</td>";
                         }
+                    echo "</tr>";
                     }
                     ?>
-                </tr>
+            </tr>
                 <tr>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><div class="btn-group">
-                            <button type="button" class="btn btn-primary">Voy</button>
-                            <button type="button" class="btn btn-primary">No Voy</button>
-                            <button type="button" class="btn btn-primary">Quizas</button>
-                        </div></td>
-                    <td><div class="btn-group">
-                        <button type="button" class="btn btn-primary">Voy</button>
-                        <button type="button" class="btn btn-primary">No Voy</button>
-                        <button type="button" class="btn btn-primary">Quizas</button>
-                    </div></td>
-                    <td></td>
-                    <td><div class="btn-group">
-                            <button type="button" class="btn btn-primary">Voy</button>
-                            <button type="button" class="btn btn-primary">No Voy</button>
-                        <button type="button" class="btn btn-primary">Quizas</button>
-                    </div></td>
+                    <?php
+                    foreach($this->eventos as $event){
+                        echo "<td>";
+                            echo '<div class="btn-group">';
+                                echo '<button type="button" class="btn btn-primary">Voy</button>';
+                                echo '<button type="button" class="btn btn-primary">No Voy</button>';
+                                echo '<button type="button" class="btn btn-primary">Quizas</button>';
+                            echo "</div>";
+                        echo "</td>";
+                    }
+
+                    ?>
                 </tr>
             </tbody>
         </table>
